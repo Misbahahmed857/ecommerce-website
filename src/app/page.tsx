@@ -1,101 +1,111 @@
-import Image from "next/image";
+import { Separator } from "@/components/ui/separator";
+import { cn } from "@/lib/utils";
+import { integralCF } from "@/styles/fonts";
+import Link from "next/link";
+import React from "react";
+import * as motion from "framer-motion/client";
 
-export default function Home() {
+const Header = () => {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <header className="bg-[#F2F0F1] pt-10 md:pt-24 overflow-hidden">
+      <div className="md:max-w-frame mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+        <section className="max-w-frame px-4">
+          <motion.h2
+            initial={{ y: "100px", opacity: 0, rotate: 10 }}
+            whileInView={{ y: "0", opacity: 1, rotate: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className={cn([
+              integralCF,
+              "text-4xl lg:text-[64px] lg:leading-[54px] mb-5 lg:mb-8",
+            ])}
           >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+            FIND CLOTHES THAT MATCHES YOUR STYLE
+          </motion.h2>
+          <motion.p
+            initial={{ y: "100px", opacity: 0 }}
+            whileInView={{ y: "0", opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+            className="text-black/60 text-sm lg:text-base mb-6 lg:mb-8 max-w-[545px]"
+          >
+            Browse through our diverse range of meticulously crafted garments,
+            designed to bring out your individuality and cater to your sense of
+            style.
+          </motion.p>
+          <motion.div
+            initial={{ y: "100px", opacity: 0 }}
+            whileInView={{ y: "0", opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 1, duration: 0.6 }}
+          >
+            <Link
+              href="/shop"
+              className="w-full md:w-52 mb-5 md:mb-12 inline-block text-center bg-black hover:bg-black/80 transition-all text-white px-14 py-4 rounded-full hover:animate-pulse"
+            >
+              Shop Now
+            </Link>
+          </motion.div>
+          <motion.div
+            initial={{ y: "100px", opacity: 0 }}
+            whileInView={{ y: "0", opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 1.5, duration: 0.6 }}
+            className="flex md:h-full md:max-h-11 lg:max-h-[52px] xl:max-h-[68px] items-center justify-center md:justify-start flex-wrap sm:flex-nowrap md:space-x-3 lg:space-x-6 xl:space-x-8 md:mb-[116px]"
+          >
+            <div className="flex flex-col">
+              <span className="font-bold text-2xl md:text-xl lg:text-3xl xl:text-[40px] xl:mb-2">
+                98+
+              </span>
+              <span className="text-xs xl:text-base text-black/60 text-nowrap">
+                International Brands
+              </span>
+            </div>
+            <Separator
+              className="ml-6 md:ml-0 h-12 md:h-full bg-black/10"
+              orientation="vertical"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+            <div className="flex flex-col ml-6 md:ml-0">
+              <span className="font-bold text-2xl md:text-xl lg:text-3xl xl:text-[40px] xl:mb-2">
+                1,790+
+              </span>
+              <span className="text-xs xl:text-base text-black/60 text-nowrap">
+                High-Quality Products
+              </span>
+            </div>
+            <Separator
+              className="hidden sm:block sm:h-12 md:h-full ml-6 md:ml-0 bg-black/10"
+              orientation="vertical"
+            />
+            <div className="flex flex-col w-full text-center sm:w-auto sm:text-left mt-3 sm:mt-0 sm:ml-6 md:ml-0">
+              <span className="font-bold text-2xl md:text-xl lg:text-3xl xl:text-[40px] xl:mb-2">
+                3000+
+              </span>
+              <span className="text-xs xl:text-base text-black/60 text-nowrap">
+                Happy Customers
+              </span>
+            </div>
+          </motion.div>
+        </section>
+      </div>
+    </header>
   );
-}
+};
+
+export default Header;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
