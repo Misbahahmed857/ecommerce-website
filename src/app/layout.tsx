@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import NotificationBar, { Header } from "./component/Header";
-import Footer from "./component/Footer";
+import NotificationBar, { Header } from "../components/Header";
+import Footer from "../components/Footer";
+import Stayupdate from "@/components/NewsLetter";
+
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -33,6 +36,7 @@ export default function RootLayout({
         <NotificationBar />
         <Header/>
         {children}
+        <Stayupdate />
        <Footer />
       </body>
     </html>
