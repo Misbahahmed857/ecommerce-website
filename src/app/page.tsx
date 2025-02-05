@@ -1,25 +1,25 @@
 
 import Hero from "@/components/Hero";
-// import FontShowcase from "@/components/Retangle";
-// import NewArivel from "../components/arrivals";
-//import BestSelling from "../components/Selling";
 import Dress from "@/components/dress";
 import CustomerCarousel from "@/components/Customer";
-import Products from "./products/page";
 import Fonts from "@/components/ui/fonts";
-// import Top_sell from "./product/sell";
+ import Toastity from "@/components/addtocart";
+import NewArrival from "./product/newArrival";
+import TopSelling from "./product/topSell";
 
 
-export default function Home() {
+
+
+
+export default function HomePage() {
   return (
    <div>
    
-    <Hero/>
-    {/* <FontShowcase/> */}
-    {/* <NewArivel/>
-    <BestSelling/> */}
+    <Hero/> 
     <Fonts />
-    <Products/>
+   <NewArrival />
+  <TopSelling />
+    <Toastity />
     <Dress/>
     <CustomerCarousel/>
     

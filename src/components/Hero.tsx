@@ -9,7 +9,7 @@ import { Separator } from "@/components/ui/separator";
 
 const Hero = () => {
   return (
-    <main className='bg-[#F2F0F1] pt-10 md:pt-24 overflow-hidden'>
+    <main className='bg-[#F2F0F1] pt-10 md:pt-24 overflow-hidden  flex-col  justify-center items-center'>
       <div className='md:max-w-frame mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2'>
         
         {/* Left side (Text and buttons) */}
@@ -96,20 +96,20 @@ const Hero = () => {
         </div>
 
         {/* Right side (Image) */}
-        <section className="flex justify-center items-center">
+        <section className="flex justify-center items-center md:h-2 sm:mt-[-500px] ">
           <motion.div
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="relative mt-[-120px]" 
+            className="relative md:mt-[1700px]" 
           >
-            <Image className='w-[500px] relative'
+            <Image className='w-[600px] relative'
               src="/image/pro.jpg"
-              width={200} 
-              height={200} 
+              width={400} 
+              height={400} 
               alt="Profile Image"
             />
-             <Image className='absolute right-7 xl:right-0 top-12 max-w-[76px] max-h-[76px] lg:max-w-24 lg:max-h-max-w-24 xl:max-w-[104px] xl:max-h-[104px] animate-[spin_4s_infinite]'
+             <Image className='absolute right-7 xl:right-0 top-20 max-w-[76px] max-h-[76px] lg:max-w-24 lg:max-h-max-w-24 xl:max-w-[104px] xl:max-h-[104px] animate-[spin_4s_infinite]'
               src="/icons/star.svg"
               width={104} 
               height={104} 

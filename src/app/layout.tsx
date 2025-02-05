@@ -1,9 +1,11 @@
+
+
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import NotificationBar, { Header } from "../components/Header";
 import Footer from "../components/Footer";
-import Stayupdate from "@/components/NewsLetter";
+
 
 
 
@@ -36,7 +38,8 @@ export default function RootLayout({
         <NotificationBar />
         <Header/>
         {children}
-        <Stayupdate />
+
+        
        <Footer />
       </body>
     </html>

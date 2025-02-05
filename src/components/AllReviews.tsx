@@ -55,7 +55,7 @@ const testimonials = [
   },
 ];
 
-export default function CustomerTestimonials() {
+export default function Reviews() {
   return (
     <main className="md:mt-14">
        <div className="flex justify-between items-center border-b-2 pb-3 p-2 md:px-10 max-w-screen-2xl  mx-auto">
